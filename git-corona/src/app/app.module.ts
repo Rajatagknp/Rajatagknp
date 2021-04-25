@@ -13,7 +13,8 @@ import { AppComponent } from './app.component';
 // components
 
 // routes
-export const ROUTES: Routes = [];
+export const ROUTES: Routes = [
+];
 
 @NgModule({
   imports: [

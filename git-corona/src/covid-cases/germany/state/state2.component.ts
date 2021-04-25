@@ -1,39 +1,36 @@
 import { Component } from "@angular/core";
 
 @Component({
-    selector: "india",
-    styleUrls: ['india.component.scss'],
+    selector: 'state2',
+    styleUrls: ['state.component.scss'],
     template: `
         <div>
-            <h3 class="heading">Number of Covid cases in India</h3>
+            <h3 class="heading">Number of Covid cases in State 2 of Germany</h3>
             <a routerLink="/home">Home</a>
+            <div>
+                <a routerLink="/home/germany">Germany</a>
+            </div>
             <table>
                 <tr>
-                    <td> State Name</td>
+                    <td> Dist Name</td>
                     <td> Active cases</td>
                     <td> Total death</td>
                     <td> Total cases</td>
                 </tr>
                 <tr>
-                    <td>
-                        <a routerLink="/home/india/state1">State 1</a> 
-                    </td>
+                    <td> Dist 1</td>
                     <td> 10</td>
                     <td> 1</td>
                     <td> 100</td>
                 </tr>
                 <tr>
-                    <td>
-                        <a routerLink="/home/india/state2">State 2</a> 
-                    </td>
+                    <td> Dist 2</td>
                     <td> 10</td>
                     <td> 1</td>
                     <td> 100</td>
                 </tr>
                 <tr>
-                    <td>
-                        <a routerLink="/home/india/state3">State 3</a> 
-                    </td>
+                    <td> Dist 3</td>
                     <td> 10</td>
                     <td> 1</td>
                     <td> 100</td>
@@ -43,4 +40,4 @@ import { Component } from "@angular/core";
     `
 })
 
-export class IndiaComponent {}
+export class State2Component {}

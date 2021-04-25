@@ -5,6 +5,7 @@ import { Component } from "@angular/core";
     styleUrls: ['home.component.scss'],
     template: `
         <div>
+            <h3 class="heading">Number of Covid cases in World</h3>
             <table>
                 <tr>
                     <td> Contry Name</td>
