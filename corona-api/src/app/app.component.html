@@ -1,0 +1,66 @@
+<h1 class="heading">Api Testing</h1>
+ 
+<div class="form-group">
+  <button type="button" (click)="getCountry()">Country List</button>
+  <hr>
+</div>
+
+<div class="form-group">
+  <label for="countryName">Contry Name :</label>
+  <input type="text" class="form-control" name="countryName" [(ngModel)]="countryName">
+  <label for="countrydate"> Date :</label>
+  <input type="text" class="form-control" name="countrydate" [(ngModel)]="countrydate"><br>
+  <button type="button" (click)="getSingleCountry()">State List</button>
+  <hr>
+</div>
+ 
+<div *ngIf="loading">loading...</div>
+ 
+<div *ngIf="errorMessage" class="alert alert-warning">
+  <strong>Warning!</strong> {{errorMessage | json}}
+</div>
+ 
+<table class='table' *ngIf="1!==gettable">
+  <thead>
+    <tr class="table_head">
+      <th class="table_head">Country Name</th>
+      <th class="table_head" *ngIf="1==Countryloading">Country Code</th>
+      <th class="table_head" *ngIf="1!==Countryloading">State Name</th>
+      <th class="table_head" *ngIf="1==Countryloading">New Confirm</th>
+      <th class="table_head">Total Confirm</th>
+      <th class="table_head" *ngIf="1==Countryloading">New Death</th>
+      <th class="table_head">Total Death</th>
+      <th class="table_head" *ngIf="1==Countryloading">New Recovered</th>
+      <th class="table_head">Total Recovered</th>
+      <th class="table_head">Date</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let repo of repos;">
+      <td class="table_head" *ngIf="1==Countryloading">
+        <button type="button" (click)="getCountryData(repo.Country)">
+          {{repo.Country}}
+        </button>
+      </td>
+      <td class="table_head" *ngIf="1!==Countryloading">{{repo.Country}}</td>
+      <td class="table_head" *ngIf="1==Countryloading">{{repo.CountryCode}}</td>
+      <td class="table_head" *ngIf="1!==Countryloading">{{repo.Province}}</td>
+      <td class="table_head" *ngIf="1==Countryloading">{{repo.NewConfirmed}}</td>
+      <td class="table_head" *ngIf="1==Countryloading">{{repo.TotalConfirmed}}</td>
+      <td class="table_head" *ngIf="1!==Countryloading">{{repo.Confirmed}}</td>
+      <td class="table_head" *ngIf="1==Countryloading">{{repo.NewDeaths}}</td>
+      <td class="table_head" *ngIf="1==Countryloading">{{repo.TotalDeaths}}</td>
+      <td class="table_head" *ngIf="1!==Countryloading">{{repo.Deaths}}</td>
+      <td class="table_head" *ngIf="1==Countryloading">{{repo.NewRecovered}}</td>
+      <td class="table_head" *ngIf="1==Countryloading">{{repo.TotalRecovered}}</td>
+      <td class="table_head" *ngIf="1!==Countryloading">{{repo.Recovered}}</td>
+      <td class="table_head">{{repo.Date}}</td>
+    </tr>
+  </tbody>
+</table>
+
+<div *ngIf="1!==errordata">
+  Data Not Avilable for <strong>{{countryName}}</strong> on <strong>{{countrydate}}</strong>.
+</div>
+
+<!-- <pre>{{repos[0] | json}}</pre> -->
